@@ -7,6 +7,10 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Aspect
 @Component
 public class AopConfig {
@@ -29,7 +33,10 @@ public class AopConfig {
     @Before("@annotation(CustomAnnotation)")
     public void test(JoinPoint joinPoint) throws Throwable {
 
-        System.out.println("...");
+        List<String> params =
+                Arrays.stream(joinPoint.getArgs()).map(String::valueOf).collect(Collectors.toList());
+
+        System.out.println("..." + params.get(0));
     }
 
 }

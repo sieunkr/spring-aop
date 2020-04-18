@@ -21,6 +21,6 @@ public class DemoApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         //service.test();
-        service.testBefore();
+        service.testBefore("latte");
     }
 }

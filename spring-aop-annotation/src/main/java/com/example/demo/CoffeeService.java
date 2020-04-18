@@ -14,9 +14,9 @@ public class CoffeeService {
     }
 
     @CustomAnnotation
-    public void testBefore() {
+    public void testBefore(String name) {
 
-        System.out.println("testBefore");
+        System.out.println("testBefore" + name);
 
     }
 }
