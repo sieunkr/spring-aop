@@ -1,8 +1,10 @@
 package com.example.demo;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -22,4 +24,12 @@ public class AopConfig {
 
         return proceed;
     }
+
+
+    @Before("@annotation(CustomAnnotation)")
+    public void test(JoinPoint joinPoint) throws Throwable {
+
+        System.out.println("...");
+    }
+
 }

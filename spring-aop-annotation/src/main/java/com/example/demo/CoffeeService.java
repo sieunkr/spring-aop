@@ -12,4 +12,11 @@ public class CoffeeService {
 
         return "test";
     }
+
+    @CustomAnnotation
+    public void testBefore() {
+
+        System.out.println("testBefore");
+
+    }
 }

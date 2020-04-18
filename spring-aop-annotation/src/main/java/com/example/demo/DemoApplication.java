@@ -19,6 +19,8 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        service.test();
+
+        //service.test();
+        service.testBefore();
     }
 }
