@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
 
-    private final HomeService service;
+    private final CoffeeService service;
 
-    public DemoApplication(HomeService service) {
+    public DemoApplication(CoffeeService service) {
         this.service = service;
     }
 
@@ -19,6 +19,6 @@ public class DemoApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        service.serve();
+        service.test();
     }
 }
