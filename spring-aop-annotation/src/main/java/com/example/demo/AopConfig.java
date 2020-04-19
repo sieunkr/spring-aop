@@ -29,14 +29,13 @@ public class AopConfig {
         return proceed;
     }
 
-
     @Before("@annotation(CustomAnnotation)")
     public void test(JoinPoint joinPoint) throws Throwable {
 
         List<String> params =
                 Arrays.stream(joinPoint.getArgs()).map(String::valueOf).collect(Collectors.toList());
 
-        System.out.println("..." + params.get(0));
+        System.out.println("params..." + params.get(0));
     }
 
 }

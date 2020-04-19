@@ -6,17 +6,18 @@ import org.springframework.stereotype.Service;
 public class CoffeeService {
 
     @LogExecutionTime
-    public String test() throws InterruptedException {
+    public void test_a() {
 
-        Thread.sleep(3000);
-
-        return "test";
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @CustomAnnotation
-    public void testBefore(String name) {
+    public void test_b(String name) {
 
-        System.out.println("testBefore" + name);
-
+        System.out.println("My name is " + name);
     }
 }
